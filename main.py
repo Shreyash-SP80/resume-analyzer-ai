@@ -381,7 +381,6 @@ def main():
         initial_sidebar_state="expanded"
     )
     
-    # Custom CSS for clean appearance
     st.markdown("""
     <style>
     .main-header {
@@ -451,7 +450,6 @@ def main():
         for tip in tips:
             st.write(f"• {tip}")
     
-    # Main content area - single column layout
     # File upload section
     uploaded_file = st.file_uploader(
         "Upload Your Resume",
@@ -507,10 +505,8 @@ def main():
                         st.error("The uploaded file appears to be empty or unreadable.")
                         return
                     
-                    # Show basic file info
                     st.info(f"Resume content extracted: {len(file_content)} characters, {len(file_content.split())} words")
                     
-                    # Perform structural analysis
                     structural_data = analyzer.analyze_resume_structure(file_content)
                     
                     # Get AI analysis
