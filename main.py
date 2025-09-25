@@ -6,7 +6,7 @@ import os
 import io
 import re
 from datetime import datetime
-from typing import Dict, List
+from typing import Dict, List 
 
 class ResumeAnalyzer:
     def __init__(self, api_key: str):
