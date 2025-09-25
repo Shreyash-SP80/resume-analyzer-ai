@@ -615,3 +615,204 @@ if __name__ == "__main__":
         st.stop()
     
     main()
+
+
+# from langchain_core.messages import HumanMessage
+# from langchain_google_genai import ChatGoogleGenerativeAI
+# from langgraph.prebuilt import create_react_agent
+# from dotenv import load_dotenv
+# import streamlit as st
+# import PyPDF2
+# import os
+# import sys
+# import io
+
+# def load_api_key():
+#     """Load Gemini API key from .env file."""
+#     load_dotenv()
+#     api_key = os.getenv("GOOGLE_API_KEY")
+
+#     if not api_key:
+#         st.error("❌ Error: GOOGLE_API_KEY not found in .env file")
+#         st.stop()
+
+#     return api_key
+
+# def build_agent(api_key: str):
+#     """Initialize the Gemini chat model and agent executor."""
+#     model = ChatGoogleGenerativeAI(
+#         model="gemini-1.5-flash",  
+#         temperature=0,
+#         google_api_key=api_key
+#     )
+
+#     tools = []  
+#     return create_react_agent(model, tools)
+
+# def extract_text_from_pdf(pdf_file):
+#     """Extract text from PDF file."""
+#     try:
+#         pdf_reader = PyPDF2.PdfReader(pdf_file)
+#         text = ""
+#         for page in pdf_reader.pages:
+#             text += page.extract_text() + "\n"
+#         return text
+#     except Exception as e:
+#         st.error(f"Error reading PDF: {str(e)}")
+#         return ""
+
+# def extract_text_from_file(uploaded_file):
+#     """Extract text from uploaded file (PDF or TXT)."""
+#     try:
+#         if uploaded_file.type == "application/pdf":
+#             return extract_text_from_pdf(io.BytesIO(uploaded_file.getvalue()))
+#         elif uploaded_file.type == "text/plain":
+#             return uploaded_file.getvalue().decode("utf-8")
+#         else:
+#             st.error("Unsupported file type")
+#             return ""
+#     except Exception as e:
+#         st.error(f"Error reading file: {str(e)}")
+#         return ""
+
+# def analyze_resume_with_gemini(file_content: str, job_role: str = "", api_key: str = ""):
+#     """Analyze resume using Gemini API."""
+#     try:
+#         # Initialize Gemini model
+#         model = ChatGoogleGenerativeAI(
+#             model="gemini-1.5-flash",
+#             temperature=0.7,
+#             google_api_key=api_key
+#         )
+        
+#         prompt = f"""Please analyze this resume and provide constructive feedback. 
+#         Focus on the following aspects:
+#         1. Content clarity and impact
+#         2. Skills presentation
+#         3. Experience descriptions
+#         4. Achievements and quantifiable results
+#         5. Overall structure and readability
+#         {f"6. Specific improvements for {job_role} role" if job_role else "6. General improvements for job applications"}
+        
+#         Resume content:
+#         {file_content[:15000]}  # Limit content to avoid token limits
+        
+#         Please provide your analysis in a clear, structured format with specific recommendations.
+#         Be constructive and provide actionable advice."""
+        
+#         # Create message and get response
+#         message = HumanMessage(content=prompt)
+#         response = model.invoke([message])
+        
+#         return response.content
+        
+#     except Exception as e:
+#         return f"Error analyzing resume: {str(e)}"
+
+# # Streamlit UI
+# def main():
+#     st.set_page_config(
+#         page_title="AI Resume Critiquer", 
+#         page_icon="📃", 
+#         layout="centered"
+#     )
+    
+#     st.title("📃 AI Resume Critiquer")
+#     st.markdown("Upload your resume and get AI-powered feedback tailored to your needs!")
+    
+#     # Load API key
+#     api_key = load_api_key()
+    
+#     # File upload
+#     uploaded_file = st.file_uploader(
+#         "Upload your resume (PDF or TXT)", 
+#         type=["pdf", "txt"],
+#         help="Supported formats: PDF and Text files"
+#     )
+    
+#     # Job role input
+#     job_role = st.text_input(
+#         "Enter the job role you're targeting (optional)",
+#         placeholder="e.g., Software Engineer, Data Analyst, Marketing Manager"
+#     )
+    
+#     # Analysis options
+#     st.subheader("Analysis Focus")
+#     col1, col2 = st.columns(2)
+    
+#     with col1:
+#         analyze_content = st.checkbox("Content & Impact", value=True)
+#         analyze_skills = st.checkbox("Skills Presentation", value=True)
+        
+#     with col2:
+#         analyze_experience = st.checkbox("Experience Descriptions", value=True)
+#         analyze_structure = st.checkbox("Structure & Readability", value=True)
+    
+#     analyze_button = st.button("Analyze Resume", type="primary")
+    
+#     if analyze_button and uploaded_file:
+#         with st.spinner("Analyzing your resume..."):
+#             try:
+#                 # Extract text from file
+#                 file_content = extract_text_from_file(uploaded_file)
+                
+#                 if not file_content.strip():
+#                     st.error("The uploaded file appears to be empty or couldn't be read.")
+#                     st.stop()
+                
+#                 # Show file info
+#                 st.info(f"📊 Resume length: {len(file_content)} characters")
+                
+#                 # Analyze with Gemini
+#                 analysis_result = analyze_resume_with_gemini(file_content, job_role, api_key)
+                
+#                 # Display results
+#                 st.markdown("## 📋 Analysis Results")
+#                 st.markdown("---")
+                
+#                 st.success("Here's your personalized resume analysis:")
+#                 st.markdown(analysis_result)
+                
+#                 # Tips section
+#                 st.markdown("## 💡 Quick Tips")
+#                 tips = """
+#                 - **Quantify achievements** with numbers and metrics
+#                 - **Use action verbs** to start bullet points
+#                 - **Tailor your resume** to each specific job application
+#                 - **Keep it concise** - aim for 1-2 pages maximum
+#                 - **Proofread carefully** for spelling and grammar errors
+#                 """
+#                 st.markdown(tips)
+                
+#             except Exception as e:
+#                 st.error(f"An error occurred during analysis: {str(e)}")
+#                 st.info("Please try again with a different file or check your API key.")
+
+#     elif analyze_button and not uploaded_file:
+#         st.warning("Please upload a resume file first.")
+
+#     # Sidebar with information
+#     with st.sidebar:
+#         st.header("ℹ️ How It Works")
+#         st.markdown("""
+#         1. **Upload** your resume (PDF or TXT)
+#         2. **Specify** target job role (optional)
+#         3. **Select** analysis focus areas
+#         4. **Get** AI-powered feedback
+        
+#         **Features:**
+#         - Content clarity assessment
+#         - Skills presentation evaluation
+#         - Experience description optimization
+#         - Structure and formatting advice
+#         """)
+        
+#         st.header("📝 Supported Formats")
+#         st.markdown("""
+#         - **PDF files** (.pdf)
+#         - **Text files** (.txt)
+#         - Maximum file size: 10MB
+#         """)
+
+# if __name__ == "__main__":
+#     main()
