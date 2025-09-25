@@ -559,27 +559,27 @@ def main():
         with col1:
             # Create downloadable report
             analysis_text = f"""
-RESUME ANALYSIS REPORT
-Generated: {analysis_data['timestamp']}
-Target Role: {analysis_data['job_role']}
-File: {analysis_data['file_name']}
-
-STRUCTURAL ANALYSIS RESULTS:
-- Word Count: {analysis_data['structural_data']['word_count']}
-- Estimated Pages: {analysis_data['structural_data']['estimated_pages']}
-- Lines of Text: {analysis_data['structural_data']['line_count']}
-- Sections Detected: {', '.join(analysis_data['structural_data']['sections_found'])}
-- Action Verbs: {analysis_data['structural_data']['action_verbs_count']}
-- Contact Information: {'Complete' if analysis_data['structural_data']['contact_info_present'] else 'Missing'}
-- Readability Score: {analysis_data['structural_data']['readability_score']:.1f}/100
-- Quantifiable Achievements: {analysis_data['structural_data']['quantifiable_achievements']}
-- Section Coverage: {analysis_data['structural_data']['section_coverage_score']}%
-
-AI ANALYSIS:
-{analysis_data['ai_analysis']}
-
-Analysis Focus Areas: {', '.join(analysis_data['focus_areas'])}
-"""
+                RESUME ANALYSIS REPORT
+                Generated: {analysis_data['timestamp']}
+                Target Role: {analysis_data['job_role']}
+                File: {analysis_data['file_name']}
+                
+                STRUCTURAL ANALYSIS RESULTS:
+                - Word Count: {analysis_data['structural_data']['word_count']}
+                - Estimated Pages: {analysis_data['structural_data']['estimated_pages']}
+                - Lines of Text: {analysis_data['structural_data']['line_count']}
+                - Sections Detected: {', '.join(analysis_data['structural_data']['sections_found'])}
+                - Action Verbs: {analysis_data['structural_data']['action_verbs_count']}
+                - Contact Information: {'Complete' if analysis_data['structural_data']['contact_info_present'] else 'Missing'}
+                - Readability Score: {analysis_data['structural_data']['readability_score']:.1f}/100
+                - Quantifiable Achievements: {analysis_data['structural_data']['quantifiable_achievements']}
+                - Section Coverage: {analysis_data['structural_data']['section_coverage_score']}%
+                
+                AI ANALYSIS:
+                {analysis_data['ai_analysis']}
+                
+                Analysis Focus Areas: {', '.join(analysis_data['focus_areas'])}
+            """
 
             st.download_button(
                 label="Download Analysis Report",
