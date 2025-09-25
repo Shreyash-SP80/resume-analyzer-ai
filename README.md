@@ -47,3 +47,25 @@ A sophisticated AI-powered resume analysis tool that provides comprehensive feed
 ```bash
 git clone https://github.com/yourusername/resume-analyzer-ai.git
 cd resume-analyzer-ai
+```
+2. Set up virtual environment with UV
+```bash
+uv venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+```
+3. Install dependencies
+```bash
+uv sync
+```
+4. Configure environment variables
+```bash
+cp .env.example .env
+```
+Edit .env file and add your Google Gemini API key:
+```env
+GOOGLE_API_KEY=your_gemini_api_key_here
+```
+5. Run the application
+```bash
+uv run streamlit run src/main.py
+```
