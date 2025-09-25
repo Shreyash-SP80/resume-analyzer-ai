@@ -1,2 +1,49 @@
-# resume-analyzer-ai
-AI-powered resume analysis tool built with Python UV that provides comprehensive resume feedback.  Uses Google Gemini AI to analyze resume content, structure, and effectiveness with detailed  suggestions for improvement tailored to specific job roles.
+# Resume Analyzer AI
+
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://python.org)
+[![UV](https://img.shields.io/badge/UV-Package%20Manager-orange)](https://github.com/astral-sh/uv)
+[![Streamlit](https://img.shields.io/badge/Streamlit-Web%20App-red)](https://streamlit.io)
+[![Google Gemini](https://img.shields.io/badge/Google-Gemini%20AI-lightgrey)](https://ai.google.dev/)
+
+A sophisticated AI-powered resume analysis tool that provides comprehensive feedback on your resume's content, structure, and effectiveness. Built with Python UV and Google Gemini AI.
+
+![Resume Analyzer Demo](https://via.placeholder.com/800x400.png?text=Resume+Analyzer+AI+Screenshot)
+
+## Features
+
+### - AI-Powered Analysis
+- **Smart Content Review**: In-depth analysis using Google Gemini AI
+- **Job Role Tailoring**: Specific recommendations based on target positions
+- **Actionable Insights**: Practical suggestions for improvement
+
+### - Structural Analysis
+- **Comprehensive Metrics**: Word count, readability score, section coverage
+- **Quality Assessment**: Professional evaluation of resume structure
+- **Industry Benchmarks**: Comparison against optimal resume standards
+
+### - Professional Feedback
+- **Content Quality**: Evaluation of impact and effectiveness
+- **Skills Presentation**: Assessment of technical and soft skills display
+- **Experience Optimization**: Suggestions for better experience descriptions
+- **ATS Optimization**: Tips for applicant tracking system compatibility
+
+### - User-Friendly Interface
+- **Multi-Format Support**: PDF and TXT file uploads
+- **Analysis History**: Track previous analyses
+- **Export Results**: Download comprehensive reports
+- **Real-time Processing**: Instant feedback and suggestions
+
+## Quick Start
+
+### Prerequisites
+
+- Python 3.8 or higher
+- UV package manager
+- Google Gemini API key
+
+### Installation
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/yourusername/resume-analyzer-ai.git
+cd resume-analyzer-ai
