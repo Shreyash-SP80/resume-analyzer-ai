@@ -11,7 +11,7 @@ from typing import Dict, List
 class ResumeAnalyzer:
     def __init__(self, api_key: str):
         self.api_key = api_key
-        self.model = ChatGoogleGenerativeAI(
+        self.model = ChatGoogleGenerativeAI( 
             model="gemini-1.5-flash",
             temperature=0.7,
             google_api_key=api_key
