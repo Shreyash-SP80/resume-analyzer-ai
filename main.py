@@ -213,8 +213,7 @@ def save_analysis_history(analysis_data: Dict):
 def display_structural_analysis(structural_data: Dict):
     """Display the structural analysis results in a professional format."""
     st.subheader("Structural Analysis")
-    
-    # Main metrics in columns
+
     col1, col2, col3, col4 = st.columns(4)
     
     with col1:
