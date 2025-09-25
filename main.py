@@ -48,19 +48,14 @@ class ResumeAnalyzer:
         char_count = len(text)
         line_count = len(lines)
         
-        # Detect common sections
         sections = self._detect_sections(text)
         
-        # Count action verbs (common resume starters)
         action_verbs = self._count_action_verbs(text)
         
-        # Detect contact information
         contact_info = self._detect_contact_info(text)
         
-        # Calculate readability score (simple version)
         readability_score = self._calculate_readability(text)
-        
-        # Detect quantifiable achievements
+    
         quantifiable_achievements = self._count_quantifiable_achievements(text)
         
         return {
@@ -131,7 +126,6 @@ class ResumeAnalyzer:
         avg_sentence_length = len(words) / len(sentences)
         avg_word_length = sum(len(word) for word in words) / len(words)
         
-        # Simple scoring (higher is better)
         score = 100 - (avg_sentence_length * 2 + avg_word_length * 3)
         return max(0, min(100, score))
     
