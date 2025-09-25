@@ -159,36 +159,36 @@ class ResumeAnalyzer:
         
         prompt = f"""As an expert resume consultant, provide a comprehensive analysis of this resume.
 
-Target Role: {job_role if job_role else "General position"}
-Focus Areas:
-{focus_text}
-
-Resume Content:
-{text[:12000]}
-
-Please provide your analysis in this structured format:
-
-EXECUTIVE SUMMARY
-Brief overall assessment
-
-STRENGTHS HIGHLIGHT
-- Key positive aspects
-- Notable achievements
-
-AREAS FOR IMPROVEMENT
-- Specific, actionable suggestions
-- Content enhancements
-- Formatting recommendations
-
-TAILORED RECOMMENDATIONS FOR {job_role if job_role else "TARGET ROLE"}
-- Role-specific optimizations
-- Keyword suggestions
-- Industry insights
-
-QUICK ACTION ITEMS
-- Top 3 immediate improvements
-
-Be constructive, professional, and provide specific examples where possible."""
+            Target Role: {job_role if job_role else "General position"}
+            Focus Areas:
+            {focus_text}
+            
+            Resume Content:
+            {text[:12000]}
+            
+            Please provide your analysis in this structured format:
+            
+            EXECUTIVE SUMMARY
+                Brief overall assessment
+                
+            STRENGTHS HIGHLIGHT
+            - Key positive aspects
+            - Notable achievements
+            
+            AREAS FOR IMPROVEMENT
+            - Specific, actionable suggestions
+            - Content enhancements
+            - Formatting recommendations
+            
+            TAILORED RECOMMENDATIONS FOR {job_role if job_role else "TARGET ROLE"}
+            - Role-specific optimizations
+            - Keyword suggestions
+            - Industry insights
+            
+            QUICK ACTION ITEMS
+            - Top 3 immediate improvements
+            
+            Be constructive, professional, and provide specific examples where possible."""
 
         try:
             message = HumanMessage(content=prompt)
