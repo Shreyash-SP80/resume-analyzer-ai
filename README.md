@@ -1,4 +1,4 @@
-# Resume Analyzer AI
+# Resume Analyzer AI 
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://python.org)
 [![UV](https://img.shields.io/badge/UV-Package%20Manager-orange)](https://github.com/astral-sh/uv)
