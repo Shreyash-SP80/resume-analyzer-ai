@@ -6,7 +6,7 @@
 [![Google Gemini](https://img.shields.io/badge/Google-Gemini%20AI-lightgrey)](https://ai.google.dev/)
 
 A sophisticated AI-powered resume analysis tool that provides comprehensive feedback on your resume's content, structure, and effectiveness. Built with Python UV and Google Gemini AI.
-
+ 
 ![Resume Analyzer Demo](https://via.placeholder.com/800x400.png?text=Resume+Analyzer+AI+Screenshot) 
 
 ## Features
