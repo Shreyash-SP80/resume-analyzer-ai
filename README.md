@@ -103,3 +103,9 @@ The application will open in your browser at http://localhost:8501
 - Sign in with your Google account
 - Create a new API key
 - Copy the key to your .env file
+
+## Environment Configuration
+Create a .env file in the project root:
+  ```bash
+     GOOGLE_API_KEY=your_actual_gemini_api_key
+  ```
