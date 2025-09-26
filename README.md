@@ -81,3 +81,12 @@ The application will open in your browser at http://localhost:8501
 - Enter the job title you're targeting
 - Get role-specific recommendations
 - Improve keyword optimization
+
+### 3. Configure Analysis Options
+- Content Quality & Impact
+- Skills Presentation
+- Experience Descriptions
+- Achievements & Metrics
+- Structure & Readability
+- ATS Optimization
+- Industry Alignment
