@@ -96,3 +96,10 @@ The application will open in your browser at http://localhost:8501
 - AI Analysis: Qualitative feedback and suggestions
 - Quality Assessment: Professional recommendations
 - Export Options: Download comprehensive report
+
+## 🔑 API Key Setup
+- Getting Google Gemini API Key
+- Visit Google AI Studio
+- Sign in with your Google account
+- Create a new API key
+- Copy the key to your .env file
