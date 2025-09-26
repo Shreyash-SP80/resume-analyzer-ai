@@ -70,3 +70,9 @@ GOOGLE_API_KEY=your_gemini_api_key_here
 uv run streamlit run src/main.py
 ```
 The application will open in your browser at http://localhost:8501
+
+## 📖 Usage Guide
+### 1. Upload Your Resume
+- Supported formats: PDF, TXT
+- Maximum file size: 10MB
+- Ensure text is selectable in PDF files
