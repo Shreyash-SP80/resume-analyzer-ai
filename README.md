@@ -76,3 +76,8 @@ The application will open in your browser at http://localhost:8501
 - Supported formats: PDF, TXT
 - Maximum file size: 10MB
 - Ensure text is selectable in PDF files
+
+### 2. Specify Target Role (Optional)
+- Enter the job title you're targeting
+- Get role-specific recommendations
+- Improve keyword optimization
