@@ -90,3 +90,9 @@ The application will open in your browser at http://localhost:8501
 - Structure & Readability
 - ATS Optimization
 - Industry Alignment
+
+### 4. Review Analysis Results
+- Structural Analysis: Quantitative metrics and benchmarks
+- AI Analysis: Qualitative feedback and suggestions
+- Quality Assessment: Professional recommendations
+- Export Options: Download comprehensive report
