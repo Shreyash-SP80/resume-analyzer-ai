@@ -69,3 +69,4 @@ GOOGLE_API_KEY=your_gemini_api_key_here
 ```bash
 uv run streamlit run src/main.py
 ```
+The application will open in your browser at http://localhost:8501
