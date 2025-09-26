@@ -11,7 +11,7 @@ A sophisticated AI-powered resume analysis tool that provides comprehensive feed
 
 ## Features
 
-### - AI-Powered Analysis
+### - AI-Powered Analysis 
 - **Smart Content Review**: In-depth analysis using Google Gemini AI
 - **Job Role Tailoring**: Specific recommendations based on target positions
 - **Actionable Insights**: Practical suggestions for improvement
