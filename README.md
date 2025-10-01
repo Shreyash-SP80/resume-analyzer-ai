@@ -1,6 +1,6 @@
 # Resume Analyzer AI 
 
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://python.org)
+[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://python.org) 
 [![UV](https://img.shields.io/badge/UV-Package%20Manager-orange)](https://github.com/astral-sh/uv)
 [![Streamlit](https://img.shields.io/badge/Streamlit-Web%20App-red)](https://streamlit.io)
 [![Google Gemini](https://img.shields.io/badge/Google-Gemini%20AI-lightgrey)](https://ai.google.dev/)
