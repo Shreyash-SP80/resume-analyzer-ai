@@ -3,7 +3,7 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 import streamlit as st
 import PyPDF2
 import os
-import io
+import io 
 import re
 from datetime import datetime
 from typing import Dict, List 
